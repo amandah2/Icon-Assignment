@@ -1,3 +1,11 @@
+/*
+This is a good layout for a mobile-first CSS template.
+Following this flow will minimize the number of styles you need to write and will ensure you are thinking, designing and developing mobile-first.
+Most of your styles get written like standard CSS, but for your mobile presentation. Generally speaking, a good mobile presention will stretch out nicely for larger screens.
+
+Sometimes, when we stretch out to larger screens, we need to make minor tweaks for the larger devices -- you can make these tweaks in the tablet media query, or if the issue exists on desktop only, the desktop media query.
+You will find this is far easier than the opposite task of using CSS to cram your desktop experience into a mobile device.
+*/
 /*********************************************************************
  LOADS IN A NICE RESET TO ENSURE ALL BROWSERS HAVE THE SAME BASE STYLES
 *********************************************************************/
@@ -10,81 +18,35 @@
     box-sizing: border-box;
 }
 
-html, body{
+html, header {
+    /* Sets default font-size to 16px, ensuring 1em = 16px; */
     font-size: 16px;
-      padding-bottom: 20px;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+html, body {
+    font-size: 10px;
+    font-family: sans-serif;
+    background-color: white;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 img {
-  display: flex;
-  max-width: 50%;
+  max-width: 150%
 
 }
-
-.container{
-  max-width: 800px;
-  margin: 0 auto;
-}
-.center {
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%
-}
-
-
-.flex{
-  /*
-  * When two elements combined exceed 100%
-  * wrap to a new row
-  */
-  flex-wrap: wrap;
-
-  /*
-  * When the flex-basis doesn't add up to 100%,
-  * distribute the negative space between the
-  * elements
-  */
-
-  justify-content: space-between;
-  font-size:  2em;
-}
-
-.icon, .text{
-  padding: 20px;
-  margin-bottom: 22px;
-  border: 1px solid #000;
-  text-align: center;
-}
-
-/*
-* Flex-basis between elements in a row add up to
-* 97% and the 3% is distributed
-*/
-.icon {
-  flex-basis: 18%;
-}
-
-.text {
-  flex-basis: 80%;
-}
-
-
 /*********************************************************************
   YOUR TABLET/DESKTOP STYLES GO HERE
 *********************************************************************/
 @media(min-width: 681px) {
     /* Any adjustments for tablets and larger go here.
     Note these styles will be applied to anything 681px or larger -- so tablet AND desktop */
-    .flex {
-      display: flex;
-    }
-    img {
-      display: flex;
-      max-width: 100%;
-
-    }
-
+}
 
 /*********************************************************************
   YOUR DESKTOP-ONLY STYLES GO HERE
